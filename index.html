@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standard Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="calculator" aria-label="Standard calculator">
+    <header class="titlebar">
+      <span>▦ &nbsp; calculator</span>
+      <div class="window-controls">
+        <button data-action="minimize" aria-label="Minimize">−</button>
+        <button data-action="maximize" aria-label="Toggle larger calculator">□</button>
+        <button data-action="close" aria-label="Close calculator">×</button>
+      </div>
+    </header>
+    <div class="body">
+      <nav class="toolbar" aria-label="Calculator tools">
+        <button data-action="help" aria-label="Keyboard shortcuts">☰</button>
+        <h1>Standard</h1>
+        <button data-action="maximize" aria-label="Toggle larger calculator">⛶</button>
+        <button class="history-toggle" data-action="history" aria-label="Show history">◷</button>
+      </nav>
+      <p id="help" class="notice" hidden>Type numbers and + − * /. Enter = result, Backspace = delete, Escape = clear, % = percentage.</p>
+      <section class="display" aria-label="Calculator display">
+        <div id="expression" class="expression">&nbsp;</div>
+        <output id="result" aria-live="polite" aria-atomic="true">0</output>
+      </section>
+      <div class="memory" aria-label="Memory controls">
+        <button data-action="mc" title="Clear memory">MC</button>
+        <button data-action="mr" title="Recall memory">MR</button>
+        <button data-action="mplus" title="Add to memory">M+</button>
+        <button data-action="mminus" title="Subtract from memory">M−</button>
+        <button data-action="ms" title="Store in memory">MS</button>
+        <button data-action="memory" title="Show memory">M⌄</button>
+      </div>
+      <p id="memory-value" class="notice" hidden></p>
+      <div class="keypad">
+        <button data-action="percent">%</button>
+        <button data-action="ce" title="Clear entry">CE</button>
+        <button data-action="clear" title="Clear all">C</button>
+        <button data-action="backspace" aria-label="Backspace">⌫</button>
+        <button data-action="reciprocal" aria-label="Reciprocal">1/x</button>
+        <button data-action="square" aria-label="Square">x²</button>
+        <button data-action="sqrt" aria-label="Square root">√x</button>
+        <button data-operator="÷" aria-label="Divide">÷</button>
+        <button data-number="7">7</button><button data-number="8">8</button><button data-number="9">9</button>
+        <button data-operator="×" aria-label="Multiply">×</button>
+        <button data-number="4">4</button><button data-number="5">5</button><button data-number="6">6</button>
+        <button data-operator="−" aria-label="Subtract">−</button>
+        <button data-number="1">1</button><button data-number="2">2</button><button data-number="3">3</button>
+        <button data-operator="+" aria-label="Add">+</button>
+        <button data-action="sign" aria-label="Change sign">±</button>
+        <button data-number="0">0</button><button data-number=".">.</button>
+        <button data-action="equals" class="equals" aria-label="Equals">=</button>
+      </div>
+      <section id="history" class="history" hidden>
+        <div class="history-heading"><h2>History</h2><button data-action="clear-history">Clear</button></div>
+        <ol id="history-list"><li>No calculations yet.</li></ol>
+      </section>
+    </div>
+  </main>
+  <button id="reopen" hidden>Open calculator</button>
+</body>
+</html>

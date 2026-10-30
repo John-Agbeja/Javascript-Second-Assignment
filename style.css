@@ -1,0 +1,38 @@
+/* Warm beige window and pale keys, inspired by the supplied reference. */
+* { box-sizing: border-box; }
+:root { color-scheme: light; --ink: #362820; --border: #75685a; --window: #d9d0bb; --key: #e8ede5; }
+body { margin: 0; min-height: 100vh; min-height: 100dvh; display: grid; place-items: center; padding: 24px 12px; background: #eef0e8; color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
+button { color: inherit; cursor: pointer; font: inherit; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+button:focus-visible { outline: 3px solid #437c8f; outline-offset: -4px; }
+button:disabled { opacity: .4; cursor: default; }
+[hidden] { display: none !important; }
+.calculator { width: min(100%, 410px); padding: 8px; border: 2px solid #695447; border-radius: 15px; background: var(--window); box-shadow: 4px 7px 8px #3e241a66, inset 0 1px 2px #fff9; }
+.calculator.large { width: min(100%, 540px); }
+.titlebar { display: flex; align-items: center; justify-content: space-between; padding-left: 5px; font: bold 19px Georgia, serif; }
+.window-controls { display: flex; gap: 8px; }
+.window-controls button { border: 0; background: transparent; width: 37px; height: 36px; font: 28px Arial, sans-serif; border-radius: 5px; }
+.window-controls button:hover { background: #ffffff55; }
+.window-controls button:last-child:hover { background: #b74232; color: white; }
+.toolbar { display: flex; align-items: center; gap: 16px; padding: 9px 0; }
+.toolbar h1 { font: bold 25px Georgia, serif; margin: 0; }
+.toolbar button { background: transparent; border: 0; font-size: 26px; padding: 5px; border-radius: 5px; }
+.history-toggle { margin-left: auto; }
+.display { padding: 42px 4px 10px; text-align: right; }
+.expression { min-height: 35px; background: #edf0e278; padding: 5px 7px; font-size: 21px; white-space: nowrap; overflow-x: auto; }
+#result { display: block; margin-top: 16px; min-height: 48px; background: #edf0e278; padding: 5px 7px; font-size: clamp(24px, 7vw, 34px); overflow-x: auto; white-space: nowrap; }
+.memory { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px; padding: 10px 0 13px; }
+.memory button { border: 0; background: transparent; padding: 8px 0; font: bold 17px Georgia, serif; border-radius: 5px; }
+.memory button:hover:not(:disabled), .toolbar button:hover { background: #ffffff55; }
+.keypad { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
+.keypad button { min-height: 53px; border: 1.5px solid var(--border); border-radius: 6px; background: var(--key); box-shadow: inset 0 1px 2px #fff8; font-size: 23px; }
+.keypad button:hover { background: #f8faf4; }
+.keypad button:active { background: #c8d1c5; transform: translateY(1px); }
+.keypad .equals { background: #d2ded4; }
+.notice, .history { padding: 12px; background: #edf0e2; border-radius: 6px; font-size: 14px; line-height: 1.5; }
+.history { margin-top: 12px; }
+.history-heading { display: flex; justify-content: space-between; align-items: center; }
+.history h2 { font-size: 18px; margin: 0; }
+.history button, #reopen { padding: 8px 14px; border: 1px solid var(--border); border-radius: 6px; background: var(--key); }
+.history ol { padding-left: 20px; max-height: 180px; overflow: auto; overflow-wrap: anywhere; }
+.history li { padding: 5px 0; }
+@media (max-width: 360px) { .toolbar { gap: 10px; } .keypad button { min-height: 48px; } .display { padding-top: 22px; } }
